@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useEffect } from 'react'
+import './App.css'
+import Layout from './components/Layout'
+import Dashboard from './pages/Dashboard'
+import { WithChildren } from './interfaces/type'
+import { SnackbarProvider } from 'notistack'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import Domains from './pages/Domains'
+import Login from './pages/Login'
+import { initBackend } from './utils/backendless'
+import SignUp from './pages/SignUp'
 
-function App() {
+const App: FC<WithChildren<{}>> = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    initBackend()
+    Backendless.UserService.isValidLogin().then((res: any) => {
+      !res && navigate('/login')
+    })
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SnackbarProvider maxSnack={3}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Layout component={<Dashboard />} />} />
+          <Route path="/domains" element={<Layout component={<Domains />} />} />
+        </Routes>
+      </SnackbarProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

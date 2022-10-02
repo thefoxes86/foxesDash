@@ -1,0 +1,1494 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Backendless DOMAINS API"
+  },
+  "host": "eu-api.backendless.com",
+  "basePath": "/856F673B-8A08-6919-FFB4-E41EF1047900/60E7F13E-EAD3-458E-B0AE-FF3010A15A71",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "userTokenHeader": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "user-token"
+    }
+  },
+  "security": [
+    {
+      "userTokenHeader": []
+    }
+  ],
+  "paths": {
+    "/data/DOMAINS": {
+      "get": {
+        "summary": "Load DOMAINS objects",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/pageSize"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/where"
+          },
+          {
+            "$ref": "#/parameters/loadRelations"
+          },
+          {
+            "$ref": "#/parameters/relationsDepth"
+          },
+          {
+            "$ref": "#/parameters/loadDOMAINSProperties"
+          },
+          {
+            "$ref": "#/parameters/sortDOMAINSProperties"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of DOMAINS objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/StoredDOMAINS"
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create DOMAINS object",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewDOMAINS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A DOMAINS object",
+            "schema": {
+              "$ref": "#/definitions/StoredDOMAINS"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/DOMAINS/count": {
+      "get": {
+        "summary": "Get DOMAINS objects Count",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/where"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Count of objects",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/DOMAINS/{objectId}": {
+      "get": {
+        "summary": "Find DOMAINS object by ID",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/objectId"
+          },
+          {
+            "$ref": "#/parameters/loadRelations"
+          },
+          {
+            "$ref": "#/parameters/relationsDepth"
+          },
+          {
+            "$ref": "#/parameters/loadDOMAINSProperties"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A DOMAINS object",
+            "schema": {
+              "$ref": "#/definitions/StoredDOMAINS"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update DOMAINS object",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/objectId"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewDOMAINS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated DOMAINS object",
+            "schema": {
+              "$ref": "#/definitions/StoredDOMAINS"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete DOMAINS Object",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/objectId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/DOMAINS/first": {
+      "get": {
+        "summary": "Find the first DOMAINS object",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/where"
+          },
+          {
+            "$ref": "#/parameters/loadRelations"
+          },
+          {
+            "$ref": "#/parameters/relationsDepth"
+          },
+          {
+            "$ref": "#/parameters/loadDOMAINSProperties"
+          },
+          {
+            "$ref": "#/parameters/sortDOMAINSProperties"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A DOMAINS objects",
+            "schema": {
+              "$ref": "#/definitions/StoredDOMAINS"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/DOMAINS/last": {
+      "get": {
+        "summary": "Find the last DOMAINS object",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/where"
+          },
+          {
+            "$ref": "#/parameters/loadRelations"
+          },
+          {
+            "$ref": "#/parameters/relationsDepth"
+          },
+          {
+            "$ref": "#/parameters/loadDOMAINSProperties"
+          },
+          {
+            "$ref": "#/parameters/sortDOMAINSProperties"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A DOMAINS objects",
+            "schema": {
+              "$ref": "#/definitions/StoredDOMAINS"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/bulk/DOMAINS": {
+      "post": {
+        "summary": "Bulk Create DOMAINS objects",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/NewDOMAINS"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of created DOMAINS objects",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/StoredDOMAINS"
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Bulk Update DOMAINS objects",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/where"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewDOMAINS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Count of updated objects",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Bulk Delete DOMAINS objects",
+        "tags": [
+          "DOMAINS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/where"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Count of deleted objects",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/data/DOMAINS/properties": {
+      "get": {
+        "summary": "Load DOMAINS Schema",
+        "tags": [
+          "DOMAINS"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of DOMAINS table columns",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TableColumn"
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/users/register": {
+      "post": {
+        "summary": "Register a new User",
+        "tags": [
+          "UserService"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "blUserLocale": {
+                  "type": "string",
+                  "default": "en"
+                },
+                "oAuthIdentities": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "accountType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "email",
+                "blUserLocale",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "updated": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "ownerId": {
+                  "type": "string"
+                },
+                "objectId": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "blUserLocale": {
+                  "type": "string"
+                },
+                "oAuthIdentities": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "userStatus": {
+                  "type": "string"
+                },
+                "socialAccount": {
+                  "type": "string"
+                },
+                "accountType": {
+                  "type": "string"
+                },
+                "lastLogin": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/users/restorepassword/{userIdentity}": {
+      "get": {
+        "summary": "Restore User Password",
+        "tags": [
+          "UserService"
+        ],
+        "parameters": [
+          {
+            "name": "userIdentity",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "User Identity"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "User Login",
+        "tags": [
+          "UserService"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "login": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "updated": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "ownerId": {
+                  "type": "string"
+                },
+                "objectId": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "blUserLocale": {
+                  "type": "string"
+                },
+                "oAuthIdentities": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "userStatus": {
+                  "type": "string"
+                },
+                "socialAccount": {
+                  "type": "string"
+                },
+                "accountType": {
+                  "type": "string"
+                },
+                "lastLogin": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "user-token": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/users/register/guest": {
+      "post": {
+        "summary": "User Login as Guest",
+        "tags": [
+          "UserService"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user-token": {
+                  "type": "string"
+                },
+                "objectId": {
+                  "type": "string"
+                },
+                "userStatus": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    },
+    "/users/logout": {
+      "post": {
+        "summary": "User Logout",
+        "tags": [
+          "UserService"
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "401": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "409": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BackendlessError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "NewDOMAINS": {
+      "type": "object",
+      "description": "This is a schema of non stored DOMAINS object",
+      "properties": {
+        "exp_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "domain_name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "mail_service": {
+          "type": "boolean"
+        },
+        "sell_price": {
+          "type": "number"
+        },
+        "hosting_service": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "exp_date",
+        "domain_name",
+        "mail_service"
+      ]
+    },
+    "StoredDOMAINS": {
+      "type": "object",
+      "description": "This is a schema of stored DOMAINS object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "exp_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "domain_name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "objectId": {
+          "type": "string"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "mail_service": {
+          "type": "boolean"
+        },
+        "sell_price": {
+          "type": "number"
+        },
+        "hosting_service": {
+          "type": "string"
+        }
+      }
+    },
+    "TableColumn": {
+      "type": "object",
+      "description": "Table Column",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Property name"
+        },
+        "type": {
+          "type": "string",
+          "description": "Property type",
+          "enum": [
+            "INT",
+            "DOUBLE",
+            "BOOLEAN",
+            "DATETIME",
+            "STRING",
+            "STRING_ID",
+            "EXTENDED_STRING",
+            "TEXT",
+            "FILE_REF",
+            "DATA_REF",
+            "CHILD_OF",
+            "JSON",
+            "UNKNOWN"
+          ]
+        },
+        "defaultValue": {
+          "type": "string",
+          "description": "Default property value"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Is property required"
+        },
+        "customRegex": {
+          "type": "string",
+          "description": "Validation RegExp"
+        },
+        "relatedTable": {
+          "type": "string",
+          "description": "Related table name"
+        },
+        "autoLoad": {
+          "type": "boolean",
+          "description": "Autoload relations"
+        },
+        "isPrimaryKey": {
+          "type": "boolean",
+          "description": "Is Primary key"
+        }
+      }
+    },
+    "BackendlessError": {
+      "type": "object",
+      "description": "Backendless Error",
+      "properties": {
+        "code": {
+          "type": "number"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "tableName": {
+      "in": "path",
+      "name": "tableName",
+      "required": true,
+      "type": "string",
+      "description": "Table name"
+    },
+    "objectId": {
+      "in": "path",
+      "name": "objectId",
+      "required": true,
+      "type": "string",
+      "description": "Object Id"
+    },
+    "relationName": {
+      "in": "path",
+      "name": "relationName",
+      "required": true,
+      "type": "string",
+      "description": "Relation name"
+    },
+    "objectIds": {
+      "in": "body",
+      "name": "objectIds",
+      "required": true,
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "objectId_1",
+          "objectId_2",
+          "objectId_3"
+        ]
+      },
+      "description": "List of objectIds"
+    },
+    "optionalObjectIds": {
+      "in": "body",
+      "name": "objectIds",
+      "required": false,
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "objectId_1",
+          "objectId_2",
+          "objectId_3"
+        ]
+      },
+      "description": "List of objectIds"
+    },
+    "pageSize": {
+      "in": "query",
+      "name": "pageSize",
+      "required": false,
+      "minimum": 1,
+      "type": "integer",
+      "description": "Page Size"
+    },
+    "offset": {
+      "in": "query",
+      "name": "offset",
+      "required": false,
+      "minimum": 0,
+      "type": "integer",
+      "description": "Page Offset"
+    },
+    "where": {
+      "in": "query",
+      "name": "where",
+      "required": false,
+      "type": "string",
+      "description": "Where Clause"
+    },
+    "loadRelations": {
+      "in": "query",
+      "name": "loadRelations",
+      "required": false,
+      "type": "string",
+      "description": "Load Relations"
+    },
+    "relationsDepth": {
+      "in": "query",
+      "name": "relationsDepth",
+      "required": false,
+      "type": "integer",
+      "description": "Relations Depth"
+    },
+    "loadDOMAINSProperties": {
+      "in": "query",
+      "name": "props",
+      "description": "Object Properties",
+      "type": "array",
+      "required": false,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "created",
+          "ownerId",
+          "exp_date",
+          "domain_name",
+          "provider",
+          "objectId",
+          "updated",
+          "mail_service",
+          "sell_price",
+          "hosting_service"
+        ]
+      }
+    },
+    "sortDOMAINSProperties": {
+      "in": "query",
+      "name": "sortBy",
+      "description": "Sorting Properties",
+      "type": "array",
+      "required": false,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "created asc",
+          "created desc",
+          "ownerId asc",
+          "ownerId desc",
+          "exp_date asc",
+          "exp_date desc",
+          "domain_name asc",
+          "domain_name desc",
+          "provider asc",
+          "provider desc",
+          "objectId asc",
+          "objectId desc",
+          "updated asc",
+          "updated desc",
+          "mail_service asc",
+          "mail_service desc",
+          "sell_price asc",
+          "sell_price desc",
+          "hosting_service asc",
+          "hosting_service desc"
+        ]
+      }
+    }
+  }
+}
